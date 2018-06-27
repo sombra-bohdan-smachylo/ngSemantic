@@ -1,13 +1,5 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var SemanticTabComponent = (function () {
     function SemanticTabComponent() {
@@ -18,31 +10,21 @@ var SemanticTabComponent = (function () {
             this.tabEl.nativeElement.parentElement.classList.add("active");
         }
     };
+    SemanticTabComponent.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "sm-tab",
+                    template: "\n<div #tab>\n    <ng-content></ng-content>\n</div>  "
+                },] },
+    ];
+    SemanticTabComponent.ctorParameters = function () { return []; };
+    SemanticTabComponent.propDecorators = {
+        'tab': [{ type: core_1.Input },],
+        'title': [{ type: core_1.Input },],
+        'active': [{ type: core_1.Input },],
+        'tabEl': [{ type: core_1.ViewChild, args: ["tab",] },],
+    };
     return SemanticTabComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], SemanticTabComponent.prototype, "tab", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticTabComponent.prototype, "title", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], SemanticTabComponent.prototype, "active", void 0);
-__decorate([
-    core_1.ViewChild("tab"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticTabComponent.prototype, "tabEl", void 0);
-SemanticTabComponent = __decorate([
-    core_1.Component({
-        selector: "sm-tab",
-        template: "\n<div #tab>\n    <ng-content></ng-content>\n</div>  "
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticTabComponent);
 exports.SemanticTabComponent = SemanticTabComponent;
 var SemanticTabsComponent = (function () {
     function SemanticTabsComponent(elementRef) {
@@ -88,25 +70,20 @@ var SemanticTabsComponent = (function () {
             tab.tab("change tab", "tab-0");
         }
     };
+    SemanticTabsComponent.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: "sm-tabs",
+                    template: "<div class=\"ui top attached tabular menu\" #menu>\n  <a class=\"item\" [ngClass]=\"{'active': tab.active}\" *ngFor=\"let tab of tabs\">{{tab.title}}</a>\n</div>\n<ng-content></ng-content>\n"
+                },] },
+    ];
+    SemanticTabsComponent.ctorParameters = function () { return [
+        { type: core_1.ElementRef, },
+    ]; };
+    SemanticTabsComponent.propDecorators = {
+        'tabs': [{ type: core_1.ContentChildren, args: [SemanticTabComponent,] },],
+        'menu': [{ type: core_1.ViewChild, args: ["menu",] },],
+        'options': [{ type: core_1.Input, args: ["options",] },],
+    };
     return SemanticTabsComponent;
 }());
-__decorate([
-    core_1.ContentChildren(SemanticTabComponent),
-    __metadata("design:type", core_1.QueryList)
-], SemanticTabsComponent.prototype, "tabs", void 0);
-__decorate([
-    core_1.ViewChild("menu"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticTabsComponent.prototype, "menu", void 0);
-__decorate([
-    core_1.Input("options"),
-    __metadata("design:type", Object)
-], SemanticTabsComponent.prototype, "options", void 0);
-SemanticTabsComponent = __decorate([
-    core_1.Component({
-        selector: "sm-tabs",
-        template: "<div class=\"ui top attached tabular menu\" #menu>\n  <a class=\"item\" [ngClass]=\"{'active': tab.active}\" *ngFor=\"let tab of tabs\">{{tab.title}}</a>\n</div>\n<ng-content></ng-content>\n"
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], SemanticTabsComponent);
 exports.SemanticTabsComponent = SemanticTabsComponent;

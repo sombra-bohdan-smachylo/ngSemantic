@@ -1,13 +1,5 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var SemanticSelectComponent = (function () {
@@ -61,56 +53,26 @@ var SemanticSelectComponent = (function () {
         jQuery(this.select.nativeElement)
             .dropdown(options);
     };
+    SemanticSelectComponent.decorators = [
+        { type: core_1.Component, args: [{
+                    changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+                    selector: "sm-select",
+                    template: "<div class=\"field\" [ngClass]=\"{error: (!control?.valid && control?.touched) }\">\n  <label *ngIf=\"label\">{{label}}</label>\n<select [formControl]=\"control\" class=\"ui {{class}} dropdown\"  #select>\n    <option value=\"\">{{placeholder}}</option>\n    <ng-content></ng-content>\n</select>\n</div>"
+                },] },
+    ];
+    SemanticSelectComponent.ctorParameters = function () { return []; };
+    SemanticSelectComponent.propDecorators = {
+        'control': [{ type: core_1.Input },],
+        'class': [{ type: core_1.Input },],
+        'label': [{ type: core_1.Input },],
+        'disabled': [{ type: core_1.Input, args: ["disabled",] },],
+        'options': [{ type: core_1.Input },],
+        'placeholder': [{ type: core_1.Input },],
+        'modelChange': [{ type: core_1.Output },],
+        'onChange': [{ type: core_1.Output },],
+        'select': [{ type: core_1.ViewChild, args: ["select",] },],
+        'model': [{ type: core_1.Input, args: ["model",] },],
+    };
     return SemanticSelectComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", forms_1.FormControl)
-], SemanticSelectComponent.prototype, "control", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticSelectComponent.prototype, "class", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticSelectComponent.prototype, "label", void 0);
-__decorate([
-    core_1.Input("disabled"),
-    __metadata("design:type", Boolean),
-    __metadata("design:paramtypes", [Boolean])
-], SemanticSelectComponent.prototype, "disabled", null);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], SemanticSelectComponent.prototype, "options", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticSelectComponent.prototype, "placeholder", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], SemanticSelectComponent.prototype, "modelChange", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], SemanticSelectComponent.prototype, "onChange", void 0);
-__decorate([
-    core_1.ViewChild("select"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticSelectComponent.prototype, "select", void 0);
-__decorate([
-    core_1.Input("model"),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], SemanticSelectComponent.prototype, "model", null);
-SemanticSelectComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-select",
-        template: "<div class=\"field\" [ngClass]=\"{error: (!control?.valid && control?.touched) }\">\n  <label *ngIf=\"label\">{{label}}</label>\n<select [formControl]=\"control\" class=\"ui {{class}} dropdown\"  #select>\n    <option value=\"\">{{placeholder}}</option>\n    <ng-content></ng-content>\n</select>\n</div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticSelectComponent);
 exports.SemanticSelectComponent = SemanticSelectComponent;
