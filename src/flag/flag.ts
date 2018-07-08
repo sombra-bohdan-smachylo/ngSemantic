@@ -6,5 +6,5 @@ import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
   template: `<i class="{{flag}} flag"></i>`
 })
 export class SemanticFlagComponent {
-  @Input("flag") flag: string;
+  @Input("flag") public flag: string;
 }

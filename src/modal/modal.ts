@@ -28,14 +28,14 @@ declare var jQuery: any;
 </div>`
 })
 export class SemanticModalComponent implements OnDestroy {
-  @Input() class: string;
-  @Input() title: string;
-  @Input() icon: string;
-  @ViewChild("modal") modal: ElementRef;
-  @Output() onModalShow: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() onModalHide: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() public class: string;
+  @Input() public title: string;
+  @Input() public icon: string;
+  @ViewChild("modal") public modal: ElementRef;
+  @Output() public onModalShow: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() public onModalHide: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  show(data?: {}) {
+  public show(data?: {}) {
     jQuery(this.modal.nativeElement)
       .modal(data || {})
       .modal("toggle");
@@ -43,7 +43,7 @@ export class SemanticModalComponent implements OnDestroy {
     this.onModalShow.next(true);
   }
 
-  hide() {
+  public hide() {
     jQuery(this.modal.nativeElement)
       .modal("hide");
 

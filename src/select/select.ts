@@ -17,9 +17,9 @@ declare var jQuery: any;
 </div>`
 })
 export class SemanticSelectComponent implements AfterViewInit {
-  @Input() control: FormControl = new FormControl();
-  @Input() class: string;
-  @Input() label: string;
+  @Input() public control: FormControl = new FormControl();
+  @Input() public class: string;
+  @Input() public label: string;
 
   @Input("disabled")
   set disabled(data: boolean) {
@@ -32,11 +32,11 @@ export class SemanticSelectComponent implements AfterViewInit {
     }, 1);
   };
 
-  @Input() options: {} = {};
-  @Input() placeholder: string;
-  @Output() modelChange: EventEmitter<string|number> = new EventEmitter<string|number>();
-  @Output() onChange: EventEmitter<string|number> = new EventEmitter<string|number>();
-  @ViewChild("select") select: ElementRef;
+  @Input() public options: {} = {};
+  @Input() public placeholder: string;
+  @Output() public modelChange: EventEmitter<string|number> = new EventEmitter<string|number>();
+  @Output() public onChange: EventEmitter<string|number> = new EventEmitter<string|number>();
+  @ViewChild("select") public select: ElementRef;
 
   @Input("model")
   set model(data: string|number) {
@@ -47,7 +47,7 @@ export class SemanticSelectComponent implements AfterViewInit {
     }
   }
 
-  private multiple: boolean = false;
+  public multiple: boolean = false;
 
   ngAfterViewInit(): void {
 

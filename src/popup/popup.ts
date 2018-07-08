@@ -17,13 +17,13 @@ declare var jQuery: any;
 </div>`
 })
 export class SemanticPopupComponent {
-  @ViewChild("popup") popup: ElementRef;
-  @Input() class: string;
+  @ViewChild("popup") public popup: ElementRef;
+  @Input() public class: string;
 
   private visible: boolean = false;
   private element: Element;
 
-  show(element: Event, data: {} = {}) {
+  public show(element: Event, data: {} = {}) {
 
     if (!this.visible) {
 
@@ -47,7 +47,7 @@ export class SemanticPopupComponent {
     }
   }
 
-  hide() {
+  public hide() {
     if (this.visible && this.element) {
 
       this.visible = false;

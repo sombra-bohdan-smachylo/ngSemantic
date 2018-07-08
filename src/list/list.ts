@@ -15,8 +15,8 @@ import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef, After
 `
 })
 export class SemanticListComponent implements AfterViewInit {
-  @Input() class: string;
-  @ViewChild("innerElement") innerElement: ElementRef;
+  @Input() public class: string;
+  @ViewChild("innerElement") public innerElement: ElementRef;
 
   ngAfterViewInit() {
 

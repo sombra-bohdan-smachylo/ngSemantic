@@ -28,8 +28,8 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 </div>`
 })
 export class SemanticCardComponent {
-  @Input() class: string;
-  @Input() image: string;
+  @Input() public class: string;
+  @Input() public image: string;
 }
 
 /**
@@ -43,5 +43,5 @@ export class SemanticCardComponent {
   template: `<div class="ui cards {{class}}"><ng-content></ng-content></div>`
 })
 export class SemanticCardsComponent {
-  @Input() class: string;
+  @Input() public class: string;
 }

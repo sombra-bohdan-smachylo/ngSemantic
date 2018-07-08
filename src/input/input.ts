@@ -24,16 +24,16 @@ import { FormControl } from "@angular/forms";
 </div>`
 })
 export class SemanticInputComponent implements OnInit {
-  @Input() label: string;
-  @Input() class: string;
-  @Input() icon: string;
-  @Input() type: string = "text";
-  @Input() placeholder: string;
-  @Input() model: {};
-  @Input() control: FormControl = new FormControl();
-  @Output() modelChange: EventEmitter<string|number> = new EventEmitter<string|number>();
+  @Input() public label: string;
+  @Input() public class: string;
+  @Input() public icon: string;
+  @Input() public type: string = "text";
+  @Input() public placeholder: string;
+  @Input() public model: {};
+  @Input() public control: FormControl = new FormControl();
+  @Output() public modelChange: EventEmitter<string|number> = new EventEmitter<string|number>();
 
-  private isInsideForm: boolean = false;
+  public isInsideForm: boolean = false;
 
   constructor(public viewRef: ViewContainerRef) {
   }
@@ -76,11 +76,11 @@ export class SemanticInputComponent implements OnInit {
   </div>`
 })
 export class SemanticCheckboxComponent {
-  @Input() control: FormControl = new FormControl();
-  @Input() label: string;
-  @Input() disabled: boolean;
-  @Input() value: string|number;
-  @Input() name: string;
+  @Input() public control: FormControl = new FormControl();
+  @Input() public label: string;
+  @Input() public disabled: boolean;
+  @Input() public value: string|number;
+  @Input() public name: string;
 
   @Input("type")
   set type(data: string) {
@@ -92,8 +92,8 @@ export class SemanticCheckboxComponent {
     }
   }
 
-  private inputType: string = "checkbox";
-  private classType = "checkbox";
+  public inputType: string = "checkbox";
+  public classType = "checkbox";
 }
 
 /**
@@ -110,7 +110,7 @@ export class SemanticCheckboxComponent {
   </div>`
 })
 export class SemanticTextareaComponent {
-  @Input() control: FormControl = new FormControl();
-  @Input() label: string;
-  @Input() rows: string;
+  @Input() public control: FormControl = new FormControl();
+  @Input() public label: string;
+  @Input() public rows: string;
 }

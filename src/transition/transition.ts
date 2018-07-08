@@ -12,14 +12,14 @@ declare var jQuery: any;
     `
 })
 export class SemanticTransitionComponent {
-  @ViewChild("transition") transition: ElementRef;
+  @ViewChild("transition") public transition: ElementRef;
 
   /**
    * Show transition element
    *
    * @param animation
    */
-  show(animation?: string) {
+  public show(animation?: string) {
     jQuery(this.transition.nativeElement)
       .transition(animation || "fade out");
   }

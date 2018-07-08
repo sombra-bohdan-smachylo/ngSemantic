@@ -13,7 +13,7 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
   </div>`
 })
 export class SemanticLoaderComponent {
-  @Input("class") class: string;
-  @Input("text") text: string;
-  @Input("complete") complete: boolean = false;
+  @Input("class") public class: string;
+  @Input("text") public text: string;
+  @Input("complete") public complete: boolean = false;
 }

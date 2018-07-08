@@ -25,14 +25,14 @@ import {
 </div>`
 })
 export class SemanticMessageComponent {
-  @Input() icon: string;
-  @Input() class: string;
-  @ViewChild("message") message: ElementRef;
+  @Input() public icon: string;
+  @Input() public class: string;
+  @ViewChild("message") public message: ElementRef;
 
   constructor(public renderer: Renderer) {
   }
 
-  close() {
+  public close() {
     this.renderer.detachView([this.message.nativeElement]);
   }
 }

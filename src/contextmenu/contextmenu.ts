@@ -23,10 +23,10 @@ import { Component, Input, ChangeDetectionStrategy, HostListener } from "@angula
 `
 })
 export class SemanticContextMenuComponent {
-  _position: { x: number, y: number } = { x: 0, y: 0 };
-  show: boolean = false;
+  public _position: { x: number, y: number } = { x: 0, y: 0 };
+  public show: boolean = false;
 
-  @Input() items: Array<{}>;
+  @Input() public items: Array<{}>;
 
   @Input("position")
   set position(data: { x: number, y: number }) {

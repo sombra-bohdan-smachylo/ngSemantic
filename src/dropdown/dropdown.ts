@@ -19,13 +19,13 @@ declare var jQuery: any;
 `
 })
 export class SemanticDropdownComponent implements AfterViewInit {
-  @Input() class: string;
-  @Input() title: string;
-  @Input() icon: string;
-  @Input() items: Array<{}>;
-  @Input() options: {} = {};
-  @Output() onChange: EventEmitter<string|number> = new EventEmitter<string|number>();
-  @ViewChild("dropdown") dropdown: ElementRef;
+  @Input() public class: string;
+  @Input() public title: string;
+  @Input() public icon: string;
+  @Input() public items: Array<{}>;
+  @Input() public options: {} = {};
+  @Output() public onChange: EventEmitter<string|number> = new EventEmitter<string|number>();
+  @ViewChild("dropdown") public dropdown: ElementRef;
 
   ngAfterViewInit(): void {
 

@@ -17,11 +17,11 @@ declare var jQuery: any;
   template: `<div class="ui {{class}} rating" #rating></div>`
 })
 export class SemanticRatingComponent implements AfterViewInit {
-  @Input() class: string;
-  @Input() initialRating: number;
-  @Input() maxRating: number;
-  @Output() onRate: EventEmitter<number> = new EventEmitter<number>();
-  @ViewChild("rating") rating: ElementRef;
+  @Input() public class: string;
+  @Input() public initialRating: number;
+  @Input() public maxRating: number;
+  @Output() public onRate: EventEmitter<number> = new EventEmitter<number>();
+  @ViewChild("rating") public rating: ElementRef;
 
   ngAfterViewInit(): void {
 

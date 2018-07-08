@@ -37,19 +37,19 @@ jQuery.fn.fixSidebar = function () {
 </div>`
 })
 export class SemanticSidebarComponent implements OnInit, OnDestroy {
-  @Input() class: string;
-  @ViewChild("sidebar") sidebar: ElementRef;
+  @Input() public class: string;
+  @ViewChild("sidebar") public sidebar: ElementRef;
 
   constructor(public renderer: Renderer) {
   }
 
-  show(options?: {}) {
+  public show(options?: {}) {
     jQuery(this.sidebar.nativeElement)
       .sidebar(options || {})
       .sidebar("toggle");
   }
 
-  hide() {
+  public hide() {
     jQuery(this.sidebar.nativeElement)
       .sidebar("hide");
   }

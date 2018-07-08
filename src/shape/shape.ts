@@ -15,11 +15,11 @@ declare var jQuery: any;
     `
 })
 export class SemanticShapeComponent implements AfterViewInit {
-  @Input() class: string;
-  @Input() options: {} = {};
-  @Output() beforeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() onChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @ViewChild("shape") shape: ElementRef;
+  @Input() public class: string;
+  @Input() public options: {} = {};
+  @Output() public beforeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() public onChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @ViewChild("shape") public shape: ElementRef;
 
   ngAfterViewInit() {
 
@@ -34,7 +34,7 @@ export class SemanticShapeComponent implements AfterViewInit {
    *
    * @param args
    */
-  show(...args: string[]) {
+  public show(...args: string[]) {
 
 
     jQuery(this.shape.nativeElement)

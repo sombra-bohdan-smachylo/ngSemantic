@@ -1,6 +1,6 @@
 {
   "name": "ng-semantic-ui-aot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./ng-semantic.js",
   "description": "Angular2 building blocks based on Semantic UI",
   "scripts": {

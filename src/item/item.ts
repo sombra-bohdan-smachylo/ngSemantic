@@ -18,9 +18,9 @@ import { Component, Input, ChangeDetectionStrategy, AfterViewInit, ViewChild, El
 </div>`
 })
 export class SemanticItemComponent implements AfterViewInit {
-  @Input() icon: string;
-  @Input() header: string;
-  @Input() image: string;
+  @Input() public icon: string;
+  @Input() public header: string;
+  @Input() public image: string;
 
   @ViewChild("innerItemElement") innerItemElement: ElementRef;
 

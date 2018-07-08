@@ -14,10 +14,10 @@ declare var jQuery: any;
 })
 export class SMVisibilityDirective implements OnInit {
 
-  @Input() smDirVisibility: {};
-  @Output() onTopVisible: EventEmitter<{}> = new EventEmitter<{}>();
-  @Output() onTopPassed: EventEmitter<{}> = new EventEmitter<{}>();
-  @Output() onUpdate: EventEmitter<{}> = new EventEmitter<{}>();
+  @Input() public smDirVisibility: {};
+  @Output() public onTopVisible: EventEmitter<{}> = new EventEmitter<{}>();
+  @Output() public onTopPassed: EventEmitter<{}> = new EventEmitter<{}>();
+  @Output() public onUpdate: EventEmitter<{}> = new EventEmitter<{}>();
 
   constructor(public element: ViewContainerRef) {
   }
@@ -45,7 +45,7 @@ export class SMVisibilityDirective implements OnInit {
 })
 export class SMDeviceVisibilityDirective implements OnInit {
 
-  @Input() smDeviceVisibility: string;
+  @Input() public smDeviceVisibility: string;
 
   constructor(public element: ViewContainerRef) {
   }

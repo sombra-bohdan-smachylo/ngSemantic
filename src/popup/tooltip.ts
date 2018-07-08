@@ -12,8 +12,8 @@ declare var jQuery: any;
 })
 export class SMTooltipDirective implements OnInit {
 
-  @Input() smDirTooltip: string;
-  @Input() smDirPosition: string;
+  @Input() public smDirTooltip: string;
+  @Input()  public smDirPosition: string;
 
   constructor(public element: ViewContainerRef) {
   }

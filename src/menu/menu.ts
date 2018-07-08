@@ -23,11 +23,11 @@ import { Component, Input, ChangeDetectionStrategy, AfterViewInit, ViewChild, El
 `
 })
 export class SemanticMenuComponent implements AfterViewInit {
-  @Input() logo: string;
-  @Input() class: string;
-  @Input() logoClass: string = "logo";
-  @Input() title: string;
-  @ViewChild("innerElement") innerElement: ElementRef;
+  @Input() public logo: string;
+  @Input() public class: string;
+  @Input() public logoClass: string = "logo";
+  @Input() public title: string;
+  @ViewChild("innerElement") public innerElement: ElementRef;
 
   ngAfterViewInit() {
     Array.from(this.innerElement.nativeElement.childNodes)

@@ -14,7 +14,7 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 </button>`
 })
 export class SemanticButtonComponent {
-  @Input("class") class: string;
-  @Input("icon") icon: string;
-  @Input("disabled") disabled: boolean = false;
+  @Input("class") public class: string;
+  @Input("icon") public icon: string;
+  @Input("disabled") public disabled: boolean = false;
 }

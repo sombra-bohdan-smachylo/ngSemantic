@@ -10,10 +10,10 @@ declare var jQuery: any;
 </div>  `
 })
 export class SemanticTabComponent implements AfterViewInit {
-  @Input() tab: number;
-  @Input() title: string;
-  @Input() active: boolean;
-  @ViewChild("tab") tabEl: ElementRef;
+  @Input() public tab: number;
+  @Input() public title: string;
+  @Input() public active: boolean;
+  @ViewChild("tab") public tabEl: ElementRef;
 
   ngAfterViewInit() {
     this.tabEl.nativeElement.parentElement.classList.add("ui", "tab", "bottom", "attached", "segment");
@@ -36,11 +36,11 @@ export class SemanticTabComponent implements AfterViewInit {
 `
 })
 export class SemanticTabsComponent implements AfterViewInit {
-  @ContentChildren(SemanticTabComponent) tabs: QueryList<SemanticTabComponent>;
-  @ViewChild("menu") menu: ElementRef;
+  @ContentChildren(SemanticTabComponent) public tabs: QueryList<SemanticTabComponent>;
+  @ViewChild("menu") public menu: ElementRef;
   // @todo Write interface for options, from :
   // http://semantic-ui.com/modules/tab.html#/settings
-  @Input("options") options: {} = {};
+  @Input("options") public options: {} = {};
 
   constructor(public elementRef: ElementRef) {
   }
@@ -62,7 +62,7 @@ export class SemanticTabsComponent implements AfterViewInit {
       });
   }
 
-  initItemsIndices() {
+  public initItemsIndices() {
 
     Array
       .from(this.menu.nativeElement.getElementsByClassName("item"))
@@ -74,7 +74,7 @@ export class SemanticTabsComponent implements AfterViewInit {
       });
   }
 
-  updateTabContentIndices() {
+  public updateTabContentIndices() {
 
     this.tabs
       .map((cmp: SemanticTabComponent, index: number) => {
@@ -84,7 +84,7 @@ export class SemanticTabsComponent implements AfterViewInit {
     this.initTabs();
   }
 
-  initTabs() {
+  public initTabs() {
 
     this.options = Object.assign({
       childrenOnly: true,

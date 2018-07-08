@@ -11,9 +11,9 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 </div>`
 })
 export class SemanticProgressComponent {
-  @Input() label: string;
-  @Input() class: string;
-  _progress: number = 0;
+  @Input() public label: string;
+  @Input() public class: string;
+  public _progress: number = 0;
 
   @Input()
   set progress(value: number) {

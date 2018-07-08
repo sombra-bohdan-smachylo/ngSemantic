@@ -18,13 +18,13 @@ import "rxjs/add/operator/distinctUntilChanged";
 </div>`
 })
 export class SemanticSearchComponent implements AfterViewInit {
-  @Input() class: string;
-  @Input() icon: boolean;
-  @Input() loading: boolean;
-  @Input() debounce: number = 0;
-  @Input() placeholder: string;
-  @Output() onSearch: EventEmitter<string|number> = new EventEmitter<string|number>();
-  searchControl: FormControl = new FormControl();
+  @Input() public class: string;
+  @Input() public icon: boolean;
+  @Input() public loading: boolean;
+  @Input() public debounce: number = 0;
+  @Input() public placeholder: string;
+  @Output() public onSearch: EventEmitter<string|number> = new EventEmitter<string|number>();
+  public searchControl: FormControl = new FormControl();
 
   ngAfterViewInit() {
     this.searchControl

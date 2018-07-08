@@ -13,5 +13,5 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 </div>`
 })
 export class SemanticSegmentComponent {
-  @Input("class") class: string;
+  @Input("class") public class: string;
 }
